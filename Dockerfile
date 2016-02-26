@@ -1,5 +1,7 @@
 FROM oneforone/docker-mesosphere-base
 
+MAINTAINER 1for.one <ops@1for.one>
+
 # Installing zookeeper.  Seems to be a dependancy to mesos
 # Not going to start it on runtime though
 RUN sudo apt-get -y install zookeeperd
