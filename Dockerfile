@@ -8,10 +8,12 @@ RUN sudo apt-get -y install zookeeperd \
     && echo 1 | sudo dd of=/var/lib/zookeeper/myid
 
 ADD mesos-master.sh /opt/mesos
+ADD mesos-slave.sh /opt/mesos
 
 # Install mesos.
 RUN sudo apt-get -y install mesos \
     && chmod a+x /opt/mesos/mesos-master.sh \
+    && chmod a+x /opt/mesos/mesos-slave.sh \
     && sudo mkdir -p /etc/mesos-master \
     && echo in_memory | sudo dd of=/etc/mesos-master/registry
 
