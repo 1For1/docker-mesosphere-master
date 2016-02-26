@@ -9,7 +9,7 @@ else
     mkdir /etc/mesos-master
     echo $MESOS_MASTER_IP | tee /etc/mesos-master/ip
     cp /etc/mesos-master/ip /etc/mesos-master/hostname
-    OPTS="--hostname=$MESOS_MASTER_IP"
+    OPTS="--hostname=$MESOS_MASTER_IP --ip=$MESOS_MASTER_IP"
 fi
 
 

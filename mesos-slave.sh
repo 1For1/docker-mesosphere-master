@@ -9,7 +9,7 @@ else
     mkdir /etc/mesos-slave
     echo $MESOS_SLAVE_IP | tee /etc/mesos-slave/ip
     cp /etc/mesos-slave/ip /etc/mesos-slave/hostname
-    OPTS="--hostname=$MESOS_SLAVE_IP"
+    OPTS="--hostname=$MESOS_SLAVE_IP --ip=$MESOS_SLAVE_IP"
 fi
 
 
