@@ -9,6 +9,8 @@ else
     mkdir /etc/mesos-master
     echo $MESOS_MASTER_IP | tee /etc/mesos-master/ip
     cp /etc/mesos-master/ip /etc/mesos-master/hostname
+     echo "**** Setting Mesos Master Quorum to $MESOS_QUORUM"
+    echo "MESOS_QUORUM=$MESOS_QUORUM" >> /etc/default/mesos-master
     OPTS="--hostname=$MESOS_MASTER_IP --ip=$MESOS_MASTER_IP"
 fi
 
