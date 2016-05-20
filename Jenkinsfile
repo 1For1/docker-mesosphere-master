@@ -40,17 +40,17 @@ switch ( env.BRANCH_NAME ) {
             //slackSend color: 'blue',  message: "ORG: ${env.JOB_NAME} #${env.BUILD_NUMBER} - Stopping DEV Services"
 
             parallel (
-                master001: { dockerstop('dev-service-mesos-master-001' },
-                slave001: { dockerstop('dev-service-mesos-slave-001' },
-                slave002: { dockerstop('dev-service-mesos-slave-002' },
-                slave003: { dockerstop('dev-service-mesos-slave-003' }
+                master001: { dockerstop('dev-service-mesos-master-001') },
+                slave001: { dockerstop('dev-service-mesos-slave-001') },
+                slave002: { dockerstop('dev-service-mesos-slave-002') },
+                slave003: { dockerstop('dev-service-mesos-slave-003') }
             )
 
             parallel (
-                master001: { dockerrm('dev-service-mesos-master-001' },
-                slave001: { dockerrm('dev-service-mesos-slave-001' },
-                slave002: { dockerrm('dev-service-mesos-slave-002' },
-                slave003: { dockerrm('dev-service-mesos-slave-003' }
+                master001: { dockerrm('dev-service-mesos-master-001') },
+                slave001: { dockerrm('dev-service-mesos-slave-001') },
+                slave002: { dockerrm('dev-service-mesos-slave-002') },
+                slave003: { dockerrm('dev-service-mesos-slave-003') }
             )
 
             slackSend color: 'blue', message: "ORG: ${env.JOB_NAME} #${env.BUILD_NUMBER} - Removing latest tag"
